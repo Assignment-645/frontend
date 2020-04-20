@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Student } from './student';
 
 
 @Injectable({
@@ -16,7 +17,7 @@ export class StudentService {
   createStudent(student: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl2}`, student);
   }
-    getStudentsList(): Observable<any> {
-    return this.http.get(`${this.baseUrl1}`);
+    getStudentsList(): Observable<Student[]> {
+    return this.http.get<Student[]>(`${this.baseUrl1}`);
   }
 }
