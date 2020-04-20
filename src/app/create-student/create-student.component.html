@@ -1,0 +1,84 @@
+<h2>New Student Form</h2>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="student.firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" required [(ngModel)]="student.lastName" name="lastName">
+      </div>
+
+      <div class="form-group">
+        <label for="address">address</label>
+        <input type="text" class="form-control" id="address" required [(ngModel)]="student.address" name="address">
+      </div>
+
+      <div class="form-group">
+        <label for="city">city</label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="student.city" name="city">
+      </div>
+
+      <div class="form-group">
+        <label for="state">state</label>
+        <input type="text" class="form-control" id="state" required [(ngModel)]="student.state" name="state">
+      </div>
+
+      <div class="form-group">
+        <label for="zip">zip</label>
+        <input type="text" class="form-control" id="zip" required [(ngModel)]="student.zip" name="zip">
+      </div>
+
+      <div class="form-group">
+        <label for="tel">tel</label>
+        <input type="text" class="form-control" id="tel" required [(ngModel)]="student.tel" name="tel">
+      </div>
+
+      
+      <div class="form-group">
+        <label for="emailId">emailId</label>
+        <input type="email" class="form-control" id="emailId" required [(ngModel)]="student.emailId" name="emailId">
+      </div>
+
+
+      <div class="form-group">
+        <label for="sdate">Submission date</label>
+        <input type="date" class="form-control" id="sdate" required [(ngModel)]="student.sdate" name="sdate">
+      </div>
+
+      <!--<div class="form-group">
+        <label for="like_about_college">like_about_college</label>
+        <input type="text" class="form-control" id="like_about_college" required [(ngModel)]="student.like_about_college" name="like_about_college">
+      </div>-->
+
+      <div class="form-group">
+        <label for="like_about_college">what did you liked most about the campus?</label>
+        <input type="text" class="form-control" id="like_about_college" required [(ngModel)]="student.like_about_college" name="like_about_college">
+      </div>
+      
+     
+        
+        <div class="form-group">
+          <label for="intrested_in_college">How you became interested in the university?</label>
+          <input type="text" class="form-control" id="intrested_in_college" required [(ngModel)]="student.intrested_in_college" name="intrested_in_college">
+        </div>
+
+      <div class="form-group">
+        <label for="recommend">recommend</label>
+        <input type="text" class="form-control" id="recommend" required [(ngModel)]="student.recommend" name="recommend">
+      </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newStudent()">Add</button> -->
+</div>
