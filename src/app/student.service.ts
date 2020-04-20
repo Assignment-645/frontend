@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StudentService {
-  private baseUrl1 = 'http://localhost:8080/Jersey-JPA-hibernate-backend/webapi/students/all';
-  private baseUrl2 = 'http://localhost:8080/Jersey-JPA-hibernate-backend/webapi/students/create';
+
+  private baseUrl1 = 'http://35.245.219.149/homework3/webapi/students/all';
+  private baseUrl2 = 'http://35.245.219.149/homework3/webapi/students/create';
 
   constructor(private http: HttpClient) { }
 
