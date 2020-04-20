@@ -51,11 +51,14 @@
       <!--<div class="form-group">
         <label for="like_about_college">like_about_college</label>
         <input type="text" class="form-control" id="like_about_college" required [(ngModel)]="student.like_about_college" name="like_about_college">
-      </div>-->
+      </div>  students, location, campus, atmosphere, dorm rooms, and sports -->
 
       <div class="form-group">
         <label for="like_about_college">what did you liked most about the campus?</label>
-        <input type="text" class="form-control" id="like_about_college" required [(ngModel)]="student.like_about_college" name="like_about_college">
+        <div *ngFor = "let likes of campusarray">
+          <input type="checkbox" value="{{likes.value}}" >{{likes.key}}
+
+        </div>
       </div>
       
      

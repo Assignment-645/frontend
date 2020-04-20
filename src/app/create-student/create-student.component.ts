@@ -13,6 +13,7 @@ export class CreateStudentComponent implements OnInit {
 
   student: Student = new Student();
   submitted = false;
+  checkselected:any = [];
   campusarray =[
     {
       "key": "students",
@@ -64,6 +65,13 @@ export class CreateStudentComponent implements OnInit {
 
   gotoList() {
     this.router.navigate(['/home']);
+  }
+
+  campuschange(event){
+    this.checkselected.push(event.target.value)
+    console.log(this.checkselected);
+    console.log("called campueschange()");
+
   }
 }
 
