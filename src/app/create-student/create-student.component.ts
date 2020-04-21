@@ -1,3 +1,4 @@
+
 import { StudentService } from '../student.service';
 import { Student } from '../student';
 import { Component, OnInit } from '@angular/core';
@@ -13,33 +14,8 @@ export class CreateStudentComponent implements OnInit {
 
   student: Student = new Student();
   submitted = false;
-  checkselected:any = [];
-  campusarray =[
-    {
-      "key": "students",
-      "value":"students"
-    },
-    {
-      "key": "location",
-      "value":"location"
-    },
-    {
-      "key": "campus",
-      "value":"campus"
-    },
-    {
-      "key": "atmosphere",
-      "value":"atmosphere"
-    },
-    {
-      "key": "dorm rooms",
-      "value":"dorm rooms"
-    },
-    {
-      "key": "sports",
-      "value":"sports"
-    },
-  ]
+  thingsLiked = [];
+  
 
   constructor(private studentService: StudentService,
     private router: Router) { }
@@ -56,22 +32,31 @@ export class CreateStudentComponent implements OnInit {
     this.studentService.createStudent(this.student)
       .subscribe(data => console.log(data), error => console.log(error));
     this.student = new Student();
-    this.gotoList();
+    
   }
   onSubmit() {
+    this.student.like_about_college = this.thingsLiked.join();
     this.submitted = true;
     this.save();    
   }
 
   gotoList() {
-    this.router.navigate(['/home']);
+        this.router.navigate(['/students']);
   }
 
-  campuschange(event){
-    this.checkselected.push(event.target.value)
-    console.log(this.checkselected);
-    console.log("called campueschange()");
+  onCheckboxChange(event, value) {
+    if (event.target.checked) {
 
+      this.thingsLiked.push(value);
+    } 
+    if (!event.target.checked) {
+
+      let index = this.thingsLiked.indexOf(value);
+
+      if (index > -1) {
+
+        this.thingsLiked.splice(index, 1);
+      }
+    }
   }
 }
-
