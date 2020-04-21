@@ -1,4 +1,4 @@
-<h2>Survey Form</h2>
+<h2></h2>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -54,7 +54,7 @@
       </div>  students, location, campus, atmosphere, dorm rooms, and sports -->
 
       <div class="form-group">
-        <label for="like_about_college">what did you liked most about the campus?</label>
+        <label for="like_about_college">what did you like most about the campus?</label>
         <div *ngFor = "let likes of campusarray">
           <input type="checkbox" value="{{likes.value}}" (change)="campuschange($event)">{{likes.key}}
 
